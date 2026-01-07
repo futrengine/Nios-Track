@@ -367,3 +367,12 @@ function resetData() {
         .then(() => location.reload());
     }
 }
+
+// ==========================================
+// 6. EXPOSE FUNCTIONS TO HTML (CRITICAL FIX)
+// ==========================================
+window.toggleList = toggleList;
+window.toggleStatus = toggleStatus;
+window.filterView = filterView;
+window.sendProgressEmail = sendProgressEmail;
+window.resetData = resetData;

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIOS Workspace | Pro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+  <script type="module" crossorigin src="/assets/index-tRCxvvdU.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B89pUqDx.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="brand">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>NIOS Pro</span>
+        </div>
+        
+        <div class="menu">
+            <div class="menu-item active" onclick="filterView('all')">
+                <i class="fa-solid fa-layer-group"></i> Dashboard
+            </div>
+            <div class="menu-item" onclick="filterView('Economics (318)')">
+                <i class="fa-solid fa-chart-line"></i> Economics
+            </div>
+            <div class="menu-item" onclick="filterView('Accountancy (320)')">
+                <i class="fa-solid fa-calculator"></i> Accounts
+            </div>
+            <div class="menu-item" onclick="filterView('Business Studies (319)')">
+                <i class="fa-solid fa-briefcase"></i> Business
+            </div>
+        </div>
+
+        <div class="bottom-menu">
+            <button class="btn-email" onclick="sendProgressEmail()">
+                <i class="fa-solid fa-envelope"></i> Email Report
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <header>
+            <div class="header-text">
+                <h1>Exam Countdown</h1>
+                <p id="current-date">Today is ...</p>
+            </div>
+            <div class="timer-card">
+                <div id="countdown">00:00:00</div>
+                <div class="timer-sub">Days : Hrs : Min : Sec</div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="card stat-card">
+                <div class="icon-box red"><i class="fa-solid fa-circle-exclamation"></i></div>
+                <div>
+                    <h3>Pending</h3>
+                    <h2 id="count-pending">0</h2>
+                </div>
+            </div>
+            <div class="card stat-card">
+                <div class="icon-box yellow"><i class="fa-solid fa-spinner"></i></div>
+                <div>
+                    <h3>In Progress</h3>
+                    <h2 id="count-progress">0</h2>
+                </div>
+            </div>
+            <div class="card stat-card">
+                <div class="icon-box green"><i class="fa-solid fa-check"></i></div>
+                <div>
+                    <h3>Completed</h3>
+                    <h2 id="count-done">0</h2>
+                </div>
+            </div>
+            <div class="card stat-card">
+                <div class="icon-box blue"><i class="fa-solid fa-trophy"></i></div>
+                <div>
+                    <h3>Readiness</h3>
+                    <h2 id="total-progress">0%</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="cloud-status">
+            <span id="status-indicator"><i class="fa-solid fa-cloud"></i> Syncing...</span>
+            <button class="btn-text" onclick="resetData()"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+        </div>
+
+        <div id="app-container" class="chapters-wrapper">
+            </div>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+
+</body>
+</html>
